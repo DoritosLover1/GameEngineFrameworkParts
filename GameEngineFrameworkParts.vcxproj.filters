@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Kaynak Dosyalar">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Kaynak Dosyaları">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\EventListeners">
+      <UniqueIdentifier>{80163774-e29e-49ce-9dcf-b039948a6a91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\EventListeners">
+      <UniqueIdentifier>{d0307443-fb8c-4140-bfed-fdb8297963ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\Enums">
+      <UniqueIdentifier>{e1065afe-a65b-4f02-b761-903a558590c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Üst Bilgi Dosyaları\EventManager">
+      <UniqueIdentifier>{2e8aba0f-78de-465d-b5b2-528ec81a162e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kaynak Dosyalar\EventManager">
+      <UniqueIdentifier>{fe1cdf5c-76f0-4b3d-8b7d-36c2a039624c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameEngineFrameworkParts.cpp">
+      <Filter>Kaynak Dosyalar</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageListener.cpp">
+      <Filter>Kaynak Dosyalar\EventListeners</Filter>
+    </ClCompile>
+    <ClCompile Include="GameEventManager.cpp">
+      <Filter>Kaynak Dosyalar\EventManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DamageListener.h">
+      <Filter>Üst Bilgi Dosyaları\EventListeners</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageTypeEnum.h">
+      <Filter>Üst Bilgi Dosyaları\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="EventListeners.h">
+      <Filter>Üst Bilgi Dosyaları\EventListeners</Filter>
+    </ClInclude>
+    <ClInclude Include="GameEventManager.h">
+      <Filter>Üst Bilgi Dosyaları\EventManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameEngineFrameworkParts.rc">
+      <Filter>Kaynak Dosyaları</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
