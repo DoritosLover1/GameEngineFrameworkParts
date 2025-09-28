@@ -3,6 +3,8 @@
 #include <string>
 
 #pragma once
+
+// This class listens the object is able to take/give damage
 class DamageListener : public EventListeners
 {
 	private:
@@ -17,18 +19,16 @@ class DamageListener : public EventListeners
 		DamageTypeEnum damageType;
 
 	public:
-		// Implementing pure virtual functions from EventListeners
-		void onEvent(int eventID) override 
+		void onEvent(int eventID, bool isActive_) override 
 		{
-			isActive= true;
-		}
-		void offEvent(int eventID) override 
-		{
-			isActive = false;
-		}
-		void triggerEvent(int eventID) override 
-		{
-			// Based on game engine specifics, apply damage logic here
+			if (isActive_)
+			{
+				isActive = true;
+			}
+			else
+			{
+				isActive = false;
+			}
 		}
 
 		// Getters for private members
