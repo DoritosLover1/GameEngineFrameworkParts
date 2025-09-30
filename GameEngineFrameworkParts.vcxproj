@@ -126,12 +126,16 @@
     <ClCompile Include="DamageListener.cpp" />
     <ClCompile Include="GameEngineFrameworkParts.cpp" />
     <ClCompile Include="GameEventManager.cpp" />
+    <ClCompile Include="KeyboardListener.cpp" />
+    <ClCompile Include="MouseListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DamageListener.h" />
     <ClInclude Include="DamageTypeEnum.h" />
     <ClInclude Include="EventListeners.h" />
     <ClInclude Include="GameEventManager.h" />
+    <ClInclude Include="KeyboardListener.h" />
+    <ClInclude Include="MouseListener.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameEngineFrameworkParts.rc" />

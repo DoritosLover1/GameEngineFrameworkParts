@@ -1,50 +1,48 @@
 #include "EventListeners.h"
 #include "DamageTypeEnum.h"
 #include <string>
+#include <atomic>   // <-- atomic eklendi
 
 #pragma once
 
 // This class listens the object is able to take/give damage
 class DamageListener : public EventListeners
 {
-	private:
-		// Damage amount to be applied
-		float damageAmount;
+private:
+    // Damage amount to be applied
+    float damageAmount;
 
-		// Event ID and isActive to listen for
-		int eventID;
-		bool isActive;
+    // Event ID and isActive to listen for
+    int eventID;
+    std::atomic<bool> isActive;
 
-		// Type of damage (e.g.,"physical", "magical", "true damage")
-		DamageTypeEnum damageType;
+    // Type of damage (e.g.,"physical", "magical", "true damage")
+    DamageTypeEnum damageType;
 
-	public:
-		void onEvent(int eventID, bool isActive_) override 
-		{
-			if (isActive_)
-			{
-				isActive = true;
-			}
-			else
-			{
-				isActive = false;
-			}
-		}
+public:
+    void onEvent(bool isActive_) override
+    {
+        if (isActive_ && damageType != NONE)
+        {
+            isActive.store(true, std::memory_order_relaxed);
+        }
+        else
+        {
+            isActive.store(false, std::memory_order_relaxed);
+        }
+    }
 
-		// Getters for private members
-		float getDamageAmount() const;
-		int getEventID() const;
-		bool getIsActive() const;
+    // Getters for private members
+    float getDamageAmount() const;
+    int getEventID() const;
+    bool getIsActive() const;
 
-		// Setters for private members
-		// For setting damageAmount, pass by value to modify the static member
-		void setDamageAmount(const float amount);
+    // Setters for private members
+    void setDamageAmount(const float amount);
 
-		~DamageListener() override {}
-		DamageListener() = default;
-		DamageListener(const int id);
-		DamageListener(const int id, const float amount = 0);
-		DamageListener(const int id, const float amount = 0, const DamageTypeEnum type = DamageTypeEnum::NONE);
+    ~DamageListener();
+    DamageListener() = default;
+    DamageListener(const int id);
+    DamageListener(const int id, const float amount = 0);
+    DamageListener(const int id, const float amount = 0, const DamageTypeEnum type = DamageTypeEnum::NONE);
 };
-
-
