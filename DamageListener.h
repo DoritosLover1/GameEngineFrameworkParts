@@ -1,8 +1,7 @@
 #include "EventListeners.h"
 #include "DamageTypeEnum.h"
 #include <string>
-#include <atomic>   // <-- atomic eklendi
-
+#include <atomic>
 #pragma once
 
 // This class listens the object is able to take/give damage
@@ -20,9 +19,14 @@ private:
     DamageTypeEnum damageType;
 
 public:
+
+    EventTypeEnum getEventType() const override {
+		return EventTypeEnum::DAMAGE;
+    }
+
     void onEvent(bool isActive_) override
     {
-        if (isActive_ && damageType != NONE)
+        if (isActive_ && damageType != DamageTypeEnum::NONE)
         {
             isActive.store(true, std::memory_order_relaxed);
         }

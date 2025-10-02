@@ -7,7 +7,7 @@ DamageListener::DamageListener(const int id, const float amount, const DamageTyp
 }
 
 DamageListener::DamageListener(const int id, const float amount)
-    : DamageListener(id, amount, DamageTypeEnum::NONE)   
+    : DamageListener(id, amount, DamageTypeEnum::NONE)
 {
 }
 

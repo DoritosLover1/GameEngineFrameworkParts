@@ -127,14 +127,17 @@
     <ClCompile Include="GameEngineFrameworkParts.cpp" />
     <ClCompile Include="GameEventManager.cpp" />
     <ClCompile Include="KeyboardListener.cpp" />
+    <ClCompile Include="Mainframe.cpp" />
     <ClCompile Include="MouseListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DamageListener.h" />
     <ClInclude Include="DamageTypeEnum.h" />
     <ClInclude Include="EventListeners.h" />
+    <ClInclude Include="EventTypeEnum.h" />
     <ClInclude Include="GameEventManager.h" />
     <ClInclude Include="KeyboardListener.h" />
+    <ClInclude Include="Mainframe.h" />
     <ClInclude Include="MouseListener.h" />
   </ItemGroup>
   <ItemGroup>

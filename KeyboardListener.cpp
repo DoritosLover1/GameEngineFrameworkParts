@@ -13,9 +13,19 @@ KeyboardListener::~KeyboardListener()
     keyCode = 0;
 }
 
-KeyboardListener::KeyboardListener() : isActive(true), keyCode(0)
+int KeyboardListener::getEventID() const
 {
-    listenerThread = std::thread(&KeyboardListener::listen, this);
+    return keyboardID;
+}
+
+KeyboardListener::KeyboardListener() : isActive(true), keyCode(0), listenerThread()
+{
+	listenerThread = std::thread(&KeyboardListener::listen, this);
+}
+
+KeyboardListener::KeyboardListener(const int id) : isActive(true), keyCode(0), keyboardID(id), listenerThread()
+{
+    listenerThread = std::thread(&KeyboardListener::listen, this); 
 }
 
 bool KeyboardListener::getIsActive() const

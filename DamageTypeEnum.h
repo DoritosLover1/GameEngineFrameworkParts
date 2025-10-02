@@ -1,5 +1,5 @@
 #pragma once
-enum DamageTypeEnum
+enum class DamageTypeEnum
 {
 	PHYSICAL,
 	MAGICAL,

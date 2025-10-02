@@ -10,8 +10,10 @@ class KeyboardListener : public EventListeners
 private:
     std::atomic<bool> isActive;
     int keyCode;
+    int keyboardID;
     std::thread listenerThread;
 
+	// Listens for key presses in a separate thread
     void listen()
     {
         while (isActive)
@@ -29,14 +31,22 @@ private:
     }
 
 public:
+       
+	EventTypeEnum getEventType() const override {
+        return EventTypeEnum::KEYBOARD;
+	}
+
     void onEvent(bool isActive_) override
     {
         isActive = isActive_;
     }
+
     bool getIsActive() const;
     int getKeyCode() const;
+	int getEventID() const;
 
     ~KeyboardListener();
     KeyboardListener();
+    KeyboardListener(const int id);
 };
 

@@ -6,6 +6,11 @@ bool MouseListener::getIsActive() const
     return isActive.load(std::memory_order_relaxed);
 }
 
+int MouseListener::getEventID() const
+{
+    return mouseID;
+}
+
 void MouseListener::watchPosition()
 {
     while (true)
@@ -31,7 +36,15 @@ MouseListener::~MouseListener()
     std::cout << "MouseListener destroyed." << std::endl;
 }
 
+//Mouse position listener
 MouseListener::MouseListener() {
     isActive.store(true, std::memory_order_relaxed);
     position = { 0, 0 };
+}
+
+MouseListener::MouseListener(const int id)
+{
+    isActive.store(true, std::memory_order_relaxed);
+    mouseID = id;
+	position = { 0, 0 };
 }

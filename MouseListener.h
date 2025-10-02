@@ -9,9 +9,15 @@ class MouseListener : public EventListeners
 {
 private:
     std::atomic<bool> isActive;
+	int mouseID;
     POINT position;
 
 public:
+
+    EventTypeEnum getEventType() const override {
+        return EventTypeEnum::MOUSE;
+    }
+
     void onEvent(bool isActive_) override
     {
         if (isActive_)
@@ -27,7 +33,10 @@ public:
     bool getIsActive() const;
     void watchPosition();
     void printerPosition() const;
+    int getEventID() const;
+
 
     ~MouseListener();
     MouseListener();
+	MouseListener(const int id);
 };
